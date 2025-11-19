@@ -1,0 +1,99 @@
+Logistic Regression Classification (TASK_$)
+
+Tools & Libraries Used
+Pandas – data loading + preprocessing
+NumPy – numerical operations
+Scikit-learn – modeling + evaluation
+Matplotlib / Seaborn – visualizations
+
+Project Workflow
+1. Dataset Loading & Initial Analysis
+Loaded the CSV file and inspected:
+First few rows
+Data types
+Missing values
+Class distribution
+Automatically identified the binary target variable.
+Understanding the raw dataset ensures proper preprocessing, helps detect data imbalance, and prepares us to select the right target for classification.
+
+2. Data Cleaning & Preprocessing
+Removal of columns with excessive missing values ( >50% )
+Median imputation for numeric features
+Mode imputation for categorical features
+Removal of ID-like columns
+Missing or irrelevant data can mislead the model and reduce accuracy. Cleaning ensures consistent inputs to the classifier.
+
+3. Feature Encoding
+Converted categorical variables into numeric using one-hot encoding (get_dummies(drop_first=True)).
+Ensured the dataset contains only meaningful numeric features for Logistic Regression.
+
+4. Train-Test Split (with Stratification)
+Split the data into:
+80% training
+20% testing
+Used stratified split to preserve class balance.
+
+5. Feature Standardization
+Scaled numeric columns using StandardScaler (z-score normalization).
+model convergence
+coefficient interpretation
+overall performance
+
+6. Logistic Regression Model Training
+Trained a Logistic Regression classifier with:
+max_iter=1000
+lbfgs solver
+low computational cost
+solid interpretability
+strong baselines for binary classification
+
+7. Model Evaluation
+Evaluated model with:
+
+Confusion Matrix
+Shows correct vs incorrect predictions.
+
+Precision, Recall, F1-score
+Important for class imbalance.
+Accuracy
+Total correctness of predictions.
+ROC Curve & AUC Score
+Measures how well the model separates the two classes at all thresholds.
+Precision–Recall Curve
+Useful when positive class is rare.
+
+8. Threshold Tuning
+Tested multiple thresholds (0.3, 0.4, 0.5, 0.6, 0.7) to see how:
+precision
+recall
+F1-score
+Lower threshold → higher recall
+Higher threshold → higher precision
+
+9. Sigmoid Function Explanation
+Helps viewers understand how Logistic Regression converts linear output into probabilities.
+
+10. Feature Importance (Coefficients)
+Extracted model coefficients
+Ranked features by absolute influence
+Visualized top predictors using a barplot
+
+Logistic Regression is interpretable — coefficients show:
+which features push predictions toward 1 (positive class)
+which features push toward 0 (negative class)
+
+Final Insights & Results
+The Logistic Regression model was successfully trained and evaluated following all required steps.
+Model delivered reliable performance with meaningful insights from:
+ROC-AUC
+confusion matrix
+threshold tuning
+feature importance analysis
+Scaling, encoding, and proper preprocessing had a direct, positive impact on model accuracy.
+
+
+Next Steps (Optional Enhancements we can further work upon are:)
+Add cross-validation
+Add regularization (L1/L2 penalty comparison)
+Try advanced models (RandomForest, XGBoost)
+Add SHAP for explainability
